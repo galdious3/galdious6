@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام حجز تذاكر الطيران | معلومات المسافر</title>
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="شعار نظام حجز تذاكر الطيران" height="40">
+                    <span class="ms-2 fw-bold text-primary">سكاي بوكينج</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bookings.html">حجوزاتي</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="offers.html">العروض</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="help.html">المساعدة</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <div class="dropdown me-3">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-globe me-1"></i> العربية
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                                <li><a class="dropdown-item active" href="#">العربية</a></li>
+                                <li><a class="dropdown-item" href="#">English</a></li>
+                            </ul>
+                        </div>
+                        <a href="login.html" class="btn btn-outline-primary">
+                            <i class="fas fa-user me-1"></i> تسجيل الدخول
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Booking Progress -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="booking-progress">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="progress-steps">
+                            <li class="progress-step completed">
+                                <div class="step-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <span class="step-label">البحث</span>
+                            </li>
+                            <li class="progress-step completed">
+                                <div class="step-icon">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                                <span class="step-label">اختيار الرحلة</span>
+                            </li>
+                            <li class="progress-step active">
+                                <div class="step-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="step-label">معلومات المسافر</span>
+                            </li>
+                            <li class="progress-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                                <span class="step-label">الخدمات الإضافية</span>
+                            </li>
+                            <li class="progress-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <span class="step-label">الدفع</span>
+                            </li>
+                            <li class="progress-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <span class="step-label">التأكيد</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Passenger Information Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Flight Summary -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-light py-3">
+                            <h5 class="mb-0">ملخص الرحلة</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="images/airlines/emirates.png" alt="طيران الإمارات" class="me-3" width="40">
+                                <div>
+                                    <h6 class="mb-0">طيران الإمارات (EK 946)</h6>
+                                    <p class="text-muted mb-0">الأربعاء، 26 مارس 2025</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <p class="mb-0"><strong>بغداد (BGW)</strong> 08:30</p>
+                                    <p class="text-muted">مطار بغداد الدولي</p>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <i class="fas fa-plane text-primary"></i>
+                                    <p class="text-muted small">3h 15m</p>
+                                </div>
+                                <div class="col-md-5 text-md-end">
+                                    <p class="mb-0"><strong>دبي (DXB)</strong> 11:45</p>
+                                    <p class="text-muted">مطار دبي الدولي</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Passenger Information Form -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-light py-3">
+                            <h5 class="mb-0">معلومات المسافر</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <form id="passenger-info-form">
+                                <div class="row g-3">
+                                    <!-- Personal Information -->
+                                    <div class="col-md-6">
+                                        <label for="title" class="form-label">اللقب</label>
+                                        <select class="form-select" id="title" required>
+                                            <option value="" selected disabled>اختر اللقب</option>
+                                            <option value="mr">السيد</option>
+                                            <option value="mrs">السيدة</option>
+                                            <option value="miss">الآنسة</option>
+                                            <option value="dr">الدكتور</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="gender" class="form-label">الجنس</label>
+                                        <select class="form-select" id="gender" required>
+                                            <option value="" selected disabled>اختر الجنس</option>
+                                            <option value="male">ذكر</option>
+                                            <option value="female">أنثى</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">الاسم الأول (كما في جواز السفر)</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">اسم العائلة (كما في جواز السفر)</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="dateOfBirth" class="form-label">تاريخ الميلاد</label>
+                                        <input type="date" class="form-control" id="dateOfBirth" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="nationality" class="form-label">الجنسية</label>
+                                        <select class="form-select" id="nationality" required>
+                                            <option value="" selected disabled>اختر الجنسية</option>
+                                            <option value="iq">العراق</option>
+                                            <option value="ae">الإمارات العربية المتحدة</option>
+                                            <option value="sa">المملكة العربية السعودية</option>
+                                            <option value="eg">مصر</option>
+                                            <option value="jo">الأردن</option>
+                                            <option value="other">أخرى</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Passport Information -->
+                                    <div class="col-12">
+                                        <hr>
+                                        <h6 class="mb-3">معلومات جواز السفر</h6>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="passportNumber" class="form-label">رقم جواز السفر</label>
+                                        <input type="text" class="form-control" id="passportNumber" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="issuingCountry" class="form-label">بلد الإصدار</label>
+                                        <select class="form-select" id="issuingCountry" required>
+                                            <option value="" selected disabled>اختر البلد</option>
+                                            <option value="iq">العراق</option>
+                                            <option value="ae">الإمارات العربية المتحدة</option>
+                                            <option value="sa">المملكة العربية السعودية</option>
+                                            <option value="eg">مصر</option>
+                                            <option value="jo">الأردن</option>
+                                            <option value="other">أخرى</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="issueDate" class="form-label">تاريخ الإصدار</label>
+                                        <input type="date" class="form-control" id="issueDate" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="expiryDate" class="form-label">تاريخ الانتهاء</label>
+                                        <input type="date" class="form-control" id="expiryDate" required>
+                                    </div>
+                                    
+                                    <!-- Contact Information -->
+                                    <div class="col-12">
+                                        <hr>
+                                        <h6 class="mb-3">معلومات الاتصال</h6>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">البريد الإلكتروني</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                        <div class="form-text">سيتم إرسال تفاصيل الحجز إلى هذا البريد الإلكتروني</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">رقم الهاتف</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="address" class="form-label">العنوان</label>
+                                        <input type="text" class="form-control" id="address" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="city" class="form-label">المدينة</label>
+                                        <input type="text" class="form-control" id="city" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="country" class="form-label">البلد</label>
+                                        <select class="form-select" id="country" required>
+                                            <option value="" selected disabled>اختر البلد</option>
+                                            <option value="iq">العراق</option>
+                                            <option value="ae">الإمارات العربية المتحدة</option>
+                                            <option value="sa">المملكة العربية السعودية</option>
+                                            <option value="eg">مصر</option>
+                                            <option value="jo">الأردن</option>
+                                            <option value="other">أخرى</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Special Requests -->
+                                    <div class="col-12">
+                                        <hr>
+                                        <h6 class="mb-3">طلبات خاصة</h6>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="mealPreference" class="form-label">تفضيلات الوجبات</label>
+                                        <select class="form-select" id="mealPreference">
+                                            <option value="" selected>لا يوجد تفضيل</option>
+                                            <option value="vegetarian">نباتي</option>
+                                            <option value="vegan">نباتي صرف</option>
+                                            <option value="halal">حلال</option>
+                                            <option value="kosher">كوشر</option>
+                                            <option value="diabetic">مناسب لمرضى السكري</option>
+                                            <option value="gluten_free">خالي من الغلوتين</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="specialAssistance" class="form-label">مساعدة خاصة</label>
+                                        <select class="form-select" id="specialAssistance">
+                                            <option value="" selected>لا يوجد</option>
+                                            <option value="wheelchair">كرسي متحرك</option>
+                                            <option value="visual_impairment">إعاقة بصرية</option>
+                                            <option value="hearing_impairment">إعاقة سمعية</option>
+                                            <option value="elderly">مساعدة لكبار السن</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="additionalRequests" class="form-label">طلبات إضافية</label>
+                                        <textarea class="form-control" id="additionalRequests" rows="3"></textarea>
+                                        <div class="form-text">سنحاول تلبية طلباتك الإضافية قدر الإمكان، ولكن لا يمكن ضمان ذلك</div>
+                                    </div>
+                                    
+                                    <!-- Save Information -->
+                                    <div class="col-12">
+                                        <hr>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="saveInformation">
+                                            <label class="form-check-label" for="saveInformation">
+                                                حفظ معلوماتي للحجوزات المستقبلية
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <!-- Price Summary Card -->
+                    <div class="card shadow-sm mb-4 sticky-top" style="top: 20px;">
+                        <div class="card-header bg-light py-3">
+                            <h5 class="mb-0">ملخص الحجز</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="booking-summary">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/airlines/emirates.png" alt="طيران الإمارات" class="me-3" width="40">
+                                    <div>
+                                        <h6 class="mb-0">طيران الإمارات</h6>
+                                        <p class="text-muted mb-0">EK 946 | الأربعاء، 26 مارس 2025</p>
+                                    </div>
+                                </div>
+                                <div class="summary-route mb-3">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="mb-0"><strong>بغداد (BGW)</strong></p>
+                                            <p class="text-muted mb-0">08:30</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <i class="fas fa-plane text-primary"></i>
+                                            <p class="text-muted small mb-0">3h 15m</p>
+                                        </div>
+                                        <div class="text-end">
+                                            <p class="mb-0"><strong>دبي (DXB)</strong></p>
+                                            <p class="text-muted mb-0">11:45</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="summary-details mb-3">
+                                    <p class="mb-1"><i class="fas fa-user text-primary me-2"></i> 1 مسافر</p>
+                                    <p class="mb-1"><i class="fas fa-tag text-primary me-2"></i> الدرجة الاقتصادية</p>
+                                </div>
+                                <hr>
+                                <div class="price-breakdown">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>سعر التذكرة الأساسي</span>
+                                        <span>$250.00</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>الضرائب والرسوم</span>
+                                        <span>$70.00</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between mb-3 fw-bold">
+                                        <span>الإجمالي</span>
+                                        <span class="text-primary">$320.00</span>
+                                    </div>
+                                </div>
+                                <a href="ancillary-services.html" class="btn btn-primary btn-lg w-100">
+                                    متابعة إلى الخدمات الإضافية
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">سكاي بوكينج</h5>
+                    <p>نظام حجز تذاكر الطيران الأفضل والأكثر موثوقية في المنطقة</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">الرئيسية</a></li>
+                        <li class="mb-2"><a href="bookings.html" class="text-white text-decoration-none">حجوزاتي</a></li>
+                        <li class="mb-2"><a href="offers.html" class="text-white text-decoration-none">العروض</a></li>
+                        <li class="mb-2"><a href="help.html" class="text-white text-decoration-none">المساعدة</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">معلومات مفيدة</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">حول سكاي بوكينج</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">الشروط والأحكام</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">سياسة الخصوصية</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">اتصل بنا</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> بغداد، العراق</li>
+                        <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> +964 123 456 789</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@skybooking.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-md-0">© 2025 سكاي بوكينج. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">تم التطوير بواسطة <a href="#" class="text-white">فريق سكاي بوكينج</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Custom JavaScript if needed
+    </script>
+</body>
+</html>

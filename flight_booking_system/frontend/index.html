@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام حجز تذاكر الطيران | الصفحة الرئيسية</title>
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="شعار نظام حجز تذاكر الطيران" height="40">
+                    <span class="ms-2 fw-bold text-primary">سكاي بوكينج</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bookings.html">حجوزاتي</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="offers.html">العروض</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="help.html">المساعدة</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <div class="dropdown me-3">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-globe me-1"></i> العربية
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                                <li><a class="dropdown-item active" href="#">العربية</a></li>
+                                <li><a class="dropdown-item" href="#">English</a></li>
+                            </ul>
+                        </div>
+                        <a href="login.html" class="btn btn-outline-primary">
+                            <i class="fas fa-user me-1"></i> تسجيل الدخول
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Search Form -->
+    <section class="hero-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <h1 class="display-4 fw-bold mb-3">احجز رحلتك بسهولة وأمان</h1>
+                    <p class="lead mb-4">ابحث عن أفضل العروض على الرحلات من مئات شركات الطيران حول العالم</p>
+                    <div class="d-flex gap-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-plane-departure fa-2x me-2"></i>
+                            <div>
+                                <h5 class="mb-0">+500</h5>
+                                <p class="mb-0">وجهة عالمية</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-building fa-2x me-2"></i>
+                            <div>
+                                <h5 class="mb-0">+15</h5>
+                                <p class="mb-0">شركة طيران</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="card shadow">
+                        <div class="card-body p-4">
+                            <ul class="nav nav-tabs mb-4" id="flightTypeTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="oneway-tab" data-bs-toggle="tab" data-bs-target="#oneway" type="button" role="tab" aria-controls="oneway" aria-selected="true">ذهاب فقط</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="roundtrip-tab" data-bs-toggle="tab" data-bs-target="#roundtrip" type="button" role="tab" aria-controls="roundtrip" aria-selected="false">ذهاب وعودة</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="multicity-tab" data-bs-toggle="tab" data-bs-target="#multicity" type="button" role="tab" aria-controls="multicity" aria-selected="false">متعدد الوجهات</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="flightTypeTabContent">
+                                <div class="tab-pane fade show active" id="oneway" role="tabpanel" aria-labelledby="oneway-tab">
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="fromCity" class="form-label">من</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="fas fa-plane-departure text-primary"></i></span>
+                                                    <select class="form-select" id="fromCity" required>
+                                                        <option value="" selected disabled>اختر مدينة المغادرة</option>
+                                                        <option value="1">بغداد (BGW)</option>
+                                                        <option value="2">لندن (LHR)</option>
+                                                        <option value="3">دبي (DXB)</option>
+                                                        <option value="4">القاهرة (CAI)</option>
+                                                        <option value="5">إسطنبول (IST)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="toCity" class="form-label">إلى</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="fas fa-plane-arrival text-primary"></i></span>
+                                                    <select class="form-select" id="toCity" required>
+                                                        <option value="" selected disabled>اختر مدينة الوصول</option>
+                                                        <option value="1">بغداد (BGW)</option>
+                                                        <option value="2">لندن (LHR)</option>
+                                                        <option value="3">دبي (DXB)</option>
+                                                        <option value="4">القاهرة (CAI)</option>
+                                                        <option value="5">إسطنبول (IST)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="departureDate" class="form-label">تاريخ المغادرة</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="fas fa-calendar-alt text-primary"></i></span>
+                                                    <input type="date" class="form-control" id="departureDate" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="passengers" class="form-label">المسافرون والدرجة</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="fas fa-users text-primary"></i></span>
+                                                    <button class="form-control text-start dropdown-toggle" type="button" id="passengersDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        1 بالغ، الدرجة الاقتصادية
+                                                    </button>
+                                                    <div class="dropdown-menu p-3" style="width: 300px;" aria-labelledby="passengersDropdown">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">البالغون (12+ سنة)</label>
+                                                            <div class="input-group">
+                                                                <button type="button" class="btn btn-outline-secondary" onclick="decrementValue('adults')">-</button>
+                                                                <input type="number" class="form-control text-center" id="adults" value="1" min="1" max="9" readonly>
+                                                                <button type="button" class="btn btn-outline-secondary" onclick="incrementValue('adults')">+</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">الأطفال (2-11 سنة)</label>
+                                                            <div class="input-group">
+                                                                <button type="button" class="btn btn-outline-secondary" onclick="decrementValue('children')">-</button>
+                                                                <input type="number" class="form-control text-center" id="children" value="0" min="0" max="9" readonly>
+                                                                <button type="button" class="btn btn-outline-secondary" onclick="incrementValue('children')">+</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">الرضع (أقل من سنتين)</label>
+                                                            <div class="input-group">
+                                                                <button type="button" class="btn btn-outline-secondary" onclick="decrementValue('infants')">-</button>
+                                                                <input type="number" class="form-control text-center" id="infants" value="0" min="0" max="9" readonly>
+                                                                <button type="button" class="btn btn-outline-secondary" onclick="incrementValue('infants')">+</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">درجة السفر</label>
+                                                            <select class="form-select" id="travelClass">
+                                                                <option value="economy" selected>الدرجة الاقتصادية</option>
+                                                                <option value="business">درجة رجال الأعمال</option>
+                                                                <option value="first">الدرجة الأولى</option>
+                                                            </select>
+                                                        </div>
+                                                        <button type="button" class="btn btn-primary w-100" onclick="updatePassengersDisplay()">تأكيد</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                                    <i class="fas fa-search me-2"></i> بحث
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="roundtrip" role="tabpanel" aria-labelledby="roundtrip-tab">
+                                    <!-- نموذج مشابه للذهاب والعودة مع إضافة حقل تاريخ العودة -->
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="fromCityRound" class="form-label">من</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="fas fa-plane-departure text-primary"></i></span>
+                                                    <select class="form-select" id="fromCityRound" required>
+                                                        <option value="" selected disabled>اختر مدينة المغادرة</option>
+                                                        <option value="1">بغداد (BGW)</option>
+                                                        <option value="2">لندن (LHR)</option>
+                                                        <option value="3">دبي (DXB)</option>
+                                                        <option value="4">القاهرة (CAI)</option>
+                                                        <option value="5">إسطنبول (IST)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="toCityRound" class="form-label">إلى</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="fas fa-plane-arrival text-primary"></i></span>
+                                                    <select class="form-select" id="toCityRound" required>
+                                                        <option value="" selected disabled>اختر مدينة الوصول</option>
+                                                        <option value="1">بغداد (BGW)</option>
+                                                        <option value="2">لندن (LHR)</option>
+                                                        <option value="3">دبي (DXB)</option>
+                                                        <option value="4">القاهرة (CAI)</option>
+                                                        <option value="5">إسطنبول (IST)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="departureDateRound" class="form-label">تاريخ المغادرة</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="fas fa-calendar-alt text-primary"></i></span>
+                                                    <input type="date" class="form-control" id="departureDateRound" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="returnDate" class="form-label">تاريخ العودة</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="fas fa-calendar-alt text-primary"></i></span>
+                                                    <input type="date" class="form-control" id="returnDate" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="passengersRound" class="form-label">المسافرون والدرجة</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="fas fa-users text-primary"></i></span>
+                                                    <button class="form-control text-start dropdown-toggle" type="button" id="passengersDropdownRound" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        1 بالغ، الدرجة الاقتصادية
+                                                    </button>
+                                                    <div class="dropdown-menu p-3" style="width: 300px;" aria-labelledby="passengersDropdownRound">
+                                                        <!-- محتوى مشابه للنموذج السابق -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                                    <i class="fas fa-search me-2"></i> بحث
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="multicity" role="tabpanel" aria-labelledby="multicity-tab">
+                                    <!-- نموذج متعدد الوجهات -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="section-title">عروض خاصة</h2>
+                <a href="offers.html" class="btn btn-outline-primary">عرض جميع العروض</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <img src="images/dubai.jpg" class="card-img-top" alt="دبي">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">دبي</h5>
+                                <span class="badge bg-primary">خصم 15%</span>
+                            </div>
+                            <p class="card-text">استمتع بعطلة مميزة في دبي مع خصم خاص على جميع الرحلات</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <small class="text-muted">من</small>
+                                    <p class="fw-bold text-primary mb-0">$250</p>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">احجز الآن</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <img src="images/istanbul.jpg" class="card-img-top" alt="إسطنبول">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">إسطنبول</h5>
+                                <span class="badge bg-primary">خصم 20%</span>
+                            </div>
+                            <p class="card-text">اكتشف جمال إسطنبول مع عروض حصرية على الرحلات</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <small class="text-muted">من</small>
+                                    <p class="fw-bold text-primary mb-0">$300</p>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">احجز الآن</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <img src="images/london.jpg" class="card-img-top" alt="لندن">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">لندن</h5>
+                                <span class="badge bg-primary">خصم 10%</span>
+                            </div>
+                            <p class="card-text">زيارة لندن أصبحت أكثر متعة مع عروضنا الخاصة</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <small class="text-muted">من</small>
+                                    <p class="fw-bold text-primary mb-0">$450</p>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">احجز الآن</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">الوجهات الشائعة</h2>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="destination-card text-center">
+                        <div class="destination-image mb-3">
+                            <img src="images/cairo.jpg" class="rounded-circle" alt="القاهرة" width="150" height="150">
+                        </div>
+                        <h5>القاهرة</h5>
+                        <p class="text-muted">من $200</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="destination-card text-center">
+                        <div class="destination-image mb-3">
+                            <img src="images/paris.jpg" class="rounded-circle" alt="باريس" width="150" height="150">
+                        </div>
+                        <h5>باريس</h5>
+                        <p class="text-muted">من $400</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="destination-card text-center">
+                        <div class="destination-image mb-3">
+                            <img src="images/newyork.jpg" class="rounded-circle" alt="نيويورك" width="150" height="150">
+                        </div>
+                        <h5>نيويورك</h5>
+                        <p class="text-muted">من $600</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="destination-card text-center">
+                        <div class="destination-image mb-3">
+                            <img src="images/tokyo.jpg" class="rounded-circle" alt="طوكيو" width="150" height="150">
+                        </div>
+                        <h5>طوكيو</h5>
+                        <p class="text-muted">من $800</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">لماذا تختار سكاي بوكينج؟</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-search fa-3x text-primary"></i>
+                        </div>
+                        <h4>بحث سهل وسريع</h4>
+                        <p>ابحث عن الرحلات بسهولة وقارن بين مئات الخيارات في ثوانٍ</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-dollar-sign fa-3x text-primary"></i>
+                        </div>
+                        <h4>أفضل الأسعار</h4>
+                        <p>نضمن لك أفضل الأسعار مع خيارات متعددة تناسب ميزانيتك</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-headset fa-3x text-primary"></i>
+                        </div>
+                        <h4>دعم على مدار الساعة</h4>
+                        <p>فريق دعم متخصص متاح 24/7 لمساعدتك في جميع استفساراتك</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Airlines Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">شركات الطيران المتاحة</h2>
+            <div class="row row-cols-2 row-cols-md-5 g-4 justify-content-center">
+                <div class="col text-center">
+                    <img src="images/airlines/emirates.png" alt="طيران الإمارات" class="img-fluid airline-logo">
+                </div>
+                <div class="col text-center">
+                    <img src="images/airlines/qatar.png" alt="الخطوط الجوية القطرية" class="img-fluid airline-logo">
+                </div>
+                <div class="col text-center">
+                    <img src="images/airlines/turkish.png" alt="الخطوط الجوية التركية" class="img-fluid airline-logo">
+                </div>
+                <div class="col text-center">
+                    <img src="images/airlines/etihad.png" alt="الاتحاد للطيران" class="img-fluid airline-logo">
+                </div>
+                <div class="col text-center">
+                    <img src="images/airlines/royal-jordanian.png" alt="الخطوط الملكية الأردنية" class="img-fluid airline-logo">
+                </div>
+                <div class="col text-center">
+                    <img src="images/airlines/saudi.png" alt="الخطوط السعودية" class="img-fluid airline-logo">
+                </div>
+                <div class="col text-center">
+                    <img src="images/airlines/iraqi.png" alt="الخطوط الجوية العراقية" class="img-fluid airline-logo">
+                </div>
+                <div class="col text-center">
+                    <img src="images/airlines/egyptair.png" alt="مصر للطيران" class="img-fluid airline-logo">
+                </div>
+                <div class="col text-center">
+                    <img src="images/airlines/lufthansa.png" alt="لوفتهانزا" class="img-fluid airline-logo">
+                </div>
+                <div class="col text-center">
+                    <img src="images/airlines/british.png" alt="الخطوط البريطانية" class="img-fluid airline-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h3 class="mb-4">اشترك في النشرة الإخبارية</h3>
+                    <p class="mb-4">احصل على أحدث العروض والخصومات مباشرة إلى بريدك الإلكتروني</p>
+                    <form class="row g-3 justify-content-center">
+                        <div class="col-md-8">
+                            <input type="email" class="form-control form-control-lg" placeholder="البريد الإلكتروني" required>
+                        </div>
+                        <div class="col-md-auto">
+                            <button type="submit" class="btn btn-light btn-lg">اشترك الآن</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">سكاي بوكينج</h5>
+                    <p>نظام حجز تذاكر الطيران الأفضل والأكثر موثوقية في المنطقة</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">الرئيسية</a></li>
+                        <li class="mb-2"><a href="bookings.html" class="text-white text-decoration-none">حجوزاتي</a></li>
+                        <li class="mb-2"><a href="offers.html" class="text-white text-decoration-none">العروض</a></li>
+                        <li class="mb-2"><a href="help.html" class="text-white text-decoration-none">المساعدة</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">معلومات مفيدة</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">حول سكاي بوكينج</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">الشروط والأحكام</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">سياسة الخصوصية</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">اتصل بنا</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> بغداد، العراق</li>
+                        <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> +964 123 456 789</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@skybooking.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-md-0">© 2025 سكاي بوكينج. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">تم التطوير بواسطة <a href="#" class="text-white">فريق سكاي بوكينج</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // وظائف للتعامل مع عدد المسافرين
+        function incrementValue(id) {
+            const input = document.getElementById(id);
+            const currentValue = parseInt(input.value);
+            if (currentValue < parseInt(input.max)) {
+                input.value = currentValue + 1;
+            }
+        }
+
+        function decrementValue(id) {
+            const input = document.getElementById(id);
+            const currentValue = parseInt(input.value);
+            if (currentValue > parseInt(input.min)) {
+                input.value = currentValue - 1;
+            }
+        }
+
+        function updatePassengersDisplay() {
+            const adults = document.getElementById('adults').value;
+            const children = document.getElementById('children').value;
+            const infants = document.getElementById('infants').value;
+            const travelClass = document.getElementById('travelClass');
+            const travelClassName = travelClass.options[travelClass.selectedIndex].text;
+            
+            let displayText = adults + ' بالغ';
+            if (children > 0) {
+                displayText += '، ' + children + ' طفل';
+            }
+            if (infants > 0) {
+                displayText += '، ' + infants + ' رضيع';
+            }
+            displayText += '، ' + travelClassName;
+            
+            document.getElementById('passengersDropdown').textContent = displayText;
+        }
+    </script>
+</body>
+</html>
